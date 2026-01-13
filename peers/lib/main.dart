@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:peers/askanonymously.dart';
-import 'package:peers/chat.dart';
-import 'package:peers/topanswers.dart';
-import 'vibrant.dart';
 import 'login.dart';
-import 'home.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
           primary: Color(0xFF536DFE),
         ),
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }

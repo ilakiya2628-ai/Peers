@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:peers/askanonymously.dart';
 import 'package:peers/browsedoubts.dart';
+import 'package:peers/myactivity.dart';
 import 'package:peers/topanswers.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +14,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FC),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const AskAnonymouslyScreen(),
+            ),
+          );
+        },
         backgroundColor: Colors.transparent,
         elevation: 0,
         label: Container(
@@ -24,6 +31,7 @@ class HomeScreen extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(30),
           ),
+          
           child: const Text(
             "Ask a Doubt",
             style: TextStyle(
@@ -79,6 +87,10 @@ class HomeScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         // Navigate to My Activity Screen
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => const MyActivityScreen())
+                        );
+                        
                       },
                       child: FeatureCard(
                         icon: Icons.history_rounded,
